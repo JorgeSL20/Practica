@@ -8,20 +8,20 @@ jobs:
 
     steps:
     - name: Mensaje
-      echo: "Hola mundo"
+      run: echo "Hola mundo"
     - name: Touch File
       run: |
-            touch hola.txt
-            ls -al
+        touch hola.txt
+        ls -al
     - name: Set text
       run: |
-            echo "Hola mundo" >> hola.txt
-            ls -al
+        echo "Hola mundo" >> hola.txt
+        ls -al
     - name: Read File
       run: cat hola.txt
   dos:
     runs-on: ubuntu-latest
-    needs: [uno]
+    needs: uno
     steps:
       - name: Directorio
-        run: ls -al 
+        run: ls -al
